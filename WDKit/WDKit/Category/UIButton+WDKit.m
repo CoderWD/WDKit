@@ -92,7 +92,7 @@
  @param block <#block description#>
  */
 -(void)handleEventTouchUpInsideWithBlock:(void (^)(id sender))block{
-    [self bk_addEventHandler:block forControlEvents:UIControlEventTouchUpInside];
+    //[self bk_addEventHandler:block forControlEvents:UIControlEventTouchUpInside];
 }
 
 @end
