@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "WDKit.h"
 @interface AppDelegate ()
 
 @end
