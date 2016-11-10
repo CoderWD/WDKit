@@ -14,7 +14,7 @@
 #import "UIImageView+WDKit.h"
 #import "UIImage+WDKit.h"
 #import "UIFont+WDKit.h"
-//#import "UILabel+WDKit.h"
+#import "UILabel+WDKit.h"
 
 //3.5寸屏
 #define is3_5inch ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
