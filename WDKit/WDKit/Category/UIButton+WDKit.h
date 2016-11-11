@@ -70,8 +70,16 @@
 /**
  创建便捷的通用点击事件
  
- @param block <#block description#>
+ @param controlEvent button事件
+ @param handler 回调block
  */
--(void)handleEventTouchUpInsideWithBlock:(void (^)(id sender))block;
+-(void)handlerControlEvent:(UIControlEvents)controlEvent handler:(void (^)(id sender))handler;
+
+/**
+ 创建最常用的TouchUpInside点击
+ 
+ @param handler 回调block
+ */
+-(void)handlerTouchUpInsideEventWithHandler:(void (^)(id sender))handler;
     
 @end

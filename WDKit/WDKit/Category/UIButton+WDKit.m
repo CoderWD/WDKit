@@ -8,7 +8,9 @@
 
 #import "UIButton+WDKit.h"
 #import "UIImage+WDKit.h"
+#import <objc/runtime.h>
 
+static const void *WDHandlersKey = &WDHandlersKey;
 @implementation UIButton (WDKit)
 
 /**
@@ -89,10 +91,44 @@
 /**
  创建便捷的通用点击事件
 
- @param block <#block description#>
+ @param controlEvent button事件
+ @param handler 回调block
  */
--(void)handleEventTouchUpInsideWithBlock:(void (^)(id sender))block{
-    //[self bk_addEventHandler:block forControlEvents:UIControlEventTouchUpInside];
+-(void)handlerControlEvent:(UIControlEvents)controlEvent handler:(void (^)(id sender))handler{
+    NSMutableDictionary *events = objc_getAssociatedObject(self, WDHandlersKey);
+    if (!events) {
+        events = [NSMutableDictionary dictionary];
+        objc_setAssociatedObject(self, WDHandlersKey, events, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    events[@(controlEvent)] = handler;
+    [self addTarget:self action:@selector(callActionWithEvent:sender:) forControlEvents:controlEvent];
+}
+
+/**
+ 创建最常用的TouchUpInside点击
+
+ @param handler 回调block
+ */
+-(void)handlerTouchUpInsideEventWithHandler:(void (^)(id sender))handler{
+    NSMutableDictionary *events = objc_getAssociatedObject(self, WDHandlersKey);
+    if (!events) {
+        events = [NSMutableDictionary dictionary];
+        objc_setAssociatedObject(self, WDHandlersKey, events, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    events[@(UIControlEventTouchUpInside)] = handler;
+    [self addTarget:self action:@selector(callActionWithEvent:sender:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+/**
+ 内部使用
+
+ @param event <#event description#>
+ @param sender <#sender description#>
+ */
+-(void)callActionWithEvent:(UIControlEvents)event sender:(id)sender{
+    NSMutableDictionary *events = objc_getAssociatedObject(self, WDHandlersKey);
+    void (^handler)(id sender) = events[@(event)];
+    handler(sender);
 }
 
 @end
