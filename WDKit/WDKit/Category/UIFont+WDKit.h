@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+//便捷创建字体字体
 #define WDSystemFont(size) [UIFont systemFontOfSize:size]
+//便捷创建系统粗字体
 #define WDBoldSystemFont(size) [UIFont boldSystemFontOfSize:size]
 
 @interface UIFont (WDKit)

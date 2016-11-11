@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+//便捷创建UIImage
 #define WDNameImage(name) [UIImage imageNamed:name]
 
 @interface UIImage (WDKit)
