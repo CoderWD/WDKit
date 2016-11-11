@@ -10,6 +10,38 @@
 #import "UIImage+WDKit.h"
 #import <objc/runtime.h>
 
+
+@interface HandlerInvoke : NSObject <NSCopying>{}
+
+- (id)initWithHandler:(void (^)(id sender))handler forControlEvents:(UIControlEvents)controlEvents;
+@property (nonatomic) UIControlEvents controlEvents;
+@property (nonatomic, copy) void (^handler)(id sender);
+
+@end
+
+@implementation HandlerInvoke
+
+- (id)initWithHandler:(void (^)(id sender))handler forControlEvents:(UIControlEvents)controlEvents{
+    self = [super init];
+    if (self) {
+        self.handler = handler;
+        self.controlEvents = controlEvents;
+    }
+    return self;
+}
+
+- (id)copyWithZone:(NSZone *)zone{
+    return [[HandlerInvoke alloc] initWithHandler:self.handler forControlEvents:self.controlEvents];
+}
+
+- (void)invoke:(id)sender{
+    self.handler(sender);
+}
+
+@end
+
+
+
 static const void *WDHandlersKey = &WDHandlersKey;
 @implementation UIButton (WDKit)
 
@@ -101,7 +133,8 @@ static const void *WDHandlersKey = &WDHandlersKey;
         objc_setAssociatedObject(self, WDHandlersKey, events, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     events[@(controlEvent)] = handler;
-    [self addTarget:self action:@selector(callActionWithEvent:sender:) forControlEvents:controlEvent];
+    HandlerInvoke *target = [[HandlerInvoke alloc] initWithHandler:handler forControlEvents:controlEvent];
+    [self addTarget:target action:@selector(invoke:) forControlEvents:controlEvent];
 }
 
 /**
@@ -109,26 +142,12 @@ static const void *WDHandlersKey = &WDHandlersKey;
 
  @param handler 回调block
  */
--(void)handlerTouchUpInsideEventWithHandler:(void (^)(id sender))handler{
-    NSMutableDictionary *events = objc_getAssociatedObject(self, WDHandlersKey);
-    if (!events) {
-        events = [NSMutableDictionary dictionary];
-        objc_setAssociatedObject(self, WDHandlersKey, events, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    }
-    events[@(UIControlEventTouchUpInside)] = handler;
-    [self addTarget:self action:@selector(callActionWithEvent:sender:) forControlEvents:UIControlEventTouchUpInside];
+-(void)handlerTouchUpInsideEvent:(void (^)(id sender))handler{
+    [self handlerControlEvent:UIControlEventTouchUpInside handler:handler];
 }
 
-/**
- 内部使用
-
- @param event <#event description#>
- @param sender <#sender description#>
- */
--(void)callActionWithEvent:(UIControlEvents)event sender:(id)sender{
-    NSMutableDictionary *events = objc_getAssociatedObject(self, WDHandlersKey);
-    void (^handler)(id sender) = events[@(event)];
-    handler(sender);
-}
 
 @end
+
+
+

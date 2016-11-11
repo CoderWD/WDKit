@@ -75,11 +75,12 @@
  */
 -(void)handlerControlEvent:(UIControlEvents)controlEvent handler:(void (^)(id sender))handler;
 
+
 /**
  创建最常用的TouchUpInside点击
  
  @param handler 回调block
  */
--(void)handlerTouchUpInsideEventWithHandler:(void (^)(id sender))handler;
+-(void)handlerTouchUpInsideEvent:(void (^)(id sender))handler;
     
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "WDKit/WDKit.h"
 
 @interface ViewController ()
 
@@ -16,6 +17,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(50, 50, 50, 50)];
+    [button setBackgroundColor:[UIColor redColor]];
+    [self.view addSubview:button];
+    [button handlerTouchUpInsideEvent:^(id sender) {
+        
+    }];
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 
