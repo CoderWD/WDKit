@@ -38,6 +38,10 @@
     self.handler(sender);
 }
 
+-(void)dealloc{
+
+}
+
 @end
 
 
@@ -127,24 +131,43 @@ static const void *WDHandlersKey = &WDHandlersKey;
  @param handler 回调block
  */
 -(void)handlerControlEvent:(UIControlEvents)controlEvent handler:(void (^)(id sender))handler{
-    NSMutableDictionary *events = objc_getAssociatedObject(self, WDHandlersKey);
+    NSMutableArray *events = objc_getAssociatedObject(self, WDHandlersKey);
     if (!events) {
-        events = [NSMutableDictionary dictionary];
+        events = [NSMutableArray array];
         objc_setAssociatedObject(self, WDHandlersKey, events, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
-    events[@(controlEvent)] = handler;
     HandlerInvoke *target = [[HandlerInvoke alloc] initWithHandler:handler forControlEvents:controlEvent];
+    [events addObject:target];
     [self addTarget:target action:@selector(invoke:) forControlEvents:controlEvent];
 }
 
 /**
  创建最常用的TouchUpInside点击
-
+ 
  @param handler 回调block
  */
 -(void)handlerTouchUpInsideEvent:(void (^)(id sender))handler{
     [self handlerControlEvent:UIControlEventTouchUpInside handler:handler];
 }
+
+/**
+ 移除target
+
+ @param event <#event description#>
+ */
+-(void)remoeTargetWithEvent:(UIControlEvents)event{
+    NSMutableArray *events = objc_getAssociatedObject(self, WDHandlersKey);
+    NSMutableArray *copyArray = [events mutableCopy];
+    [copyArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        HandlerInvoke *target = events[idx];
+        if (target.controlEvents == event) {
+            [self removeTarget:target action:NULL forControlEvents:event];
+            [events removeObject:target];
+        }
+    }];
+}
+
+
 
 
 @end
