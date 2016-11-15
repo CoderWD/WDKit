@@ -236,7 +236,7 @@
  
  @param cornerRadius 度数
  */
-- (void)setCcornerRadius:(CGFloat)cornerRadius{
+- (void)setCornerRadius:(CGFloat)cornerRadius{
     self.layer.shouldRasterize = YES;
     self.layer.rasterizationScale = [UIScreen mainScreen].scale;
     self.layer.cornerRadius = cornerRadius;

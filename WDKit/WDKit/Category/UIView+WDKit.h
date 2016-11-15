@@ -90,6 +90,6 @@
 
  @param cornerRadius 度数
  */
-- (void)setCcornerRadius:(CGFloat)cornerRadius;
+- (void)setCornerRadius:(CGFloat)cornerRadius;
 
 @end
