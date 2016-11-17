@@ -68,6 +68,20 @@
 -(void)setSelectedTitle:(NSString*)title;
 
 /**
+ 设置Normal下的Title Color
+ 
+ @param color <#color description#>
+ */
+-(void)setNormalTitleColor:(UIColor *)color;
+
+/**
+ 设置Highlighted下的Title Color
+ 
+ @param color <#color description#>
+ */
+-(void)setHighlightedTitleColor:(UIColor *)color;
+
+/**
  创建便捷的通用点击事件
  
  @param controlEvent button事件

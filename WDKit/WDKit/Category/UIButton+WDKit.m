@@ -125,6 +125,23 @@ static const void *WDHandlersKey = &WDHandlersKey;
 }
 
 /**
+ 设置Normal下的Title Color
+
+ @param color <#color description#>
+ */
+-(void)setNormalTitleColor:(UIColor *)color{
+    [self setTitleColor:color forState:UIControlStateNormal];
+}
+
+/**
+  设置Highlighted下的Title Color
+
+ @param color <#color description#>
+ */
+-(void)setHighlightedTitleColor:(UIColor *)color{
+    [self setTitleColor:color forState:UIControlStateHighlighted];
+}
+/**
  创建便捷的通用点击事件
 
  @param controlEvent button事件

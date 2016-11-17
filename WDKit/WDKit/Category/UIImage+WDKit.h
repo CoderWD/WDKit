@@ -31,4 +31,13 @@
  */
 +(UIImage *)compressImage:(UIImage *)sourceImage toTargetWidth:(CGFloat)targetWidt;
 
+/**
+ 生成高斯模糊UIImage
+ 
+ @param image 原始图片
+ @param blur 0.0~1.0f强度
+ @return <#return value description#>
+ */
++(UIImage *)blurImage:(UIImage *)image withBlur:(CGFloat)blur;
+
 @end

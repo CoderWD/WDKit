@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = "WDKit"
-s.version          = "1.0.2.7"
+s.version          = "1.0.2.8"
 s.summary          = "A marquee view used on iOS."
 s.description      = <<-DESC
 It is a marquee view used on iOS, which implement by Objective-C.
@@ -32,6 +32,6 @@ end
 # s.ios.exclude_files = 'Classes/osx'
 # s.osx.exclude_files = 'Classes/ios'
 # s.public_header_files = 'Classes/**/*.h'
-s.frameworks = 'Foundation', 'CoreGraphics', 'UIKit'
+s.frameworks = 'Foundation', 'CoreGraphics', 'UIKit', 'Security'
 
 end
