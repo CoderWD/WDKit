@@ -19,6 +19,7 @@
 		B65D513B1DC87E9300D4831D /* UIButton+WDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B65D513A1DC87E9300D4831D /* UIButton+WDKit.m */; };
 		B65D513E1DC87F5300D4831D /* UIImageView+WDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B65D513D1DC87F5300D4831D /* UIImageView+WDKit.m */; };
 		B65D51411DC87FF100D4831D /* UIImage+WDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B65D51401DC87FF100D4831D /* UIImage+WDKit.m */; };
+		B66C71F41DE6748C00771CF1 /* WDUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B66C71F31DE6748C00771CF1 /* WDUtils.m */; };
 		B67C71A71DDDADB900F7C811 /* WDKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = B67C71A61DDDADB900F7C811 /* WDKeyChain.m */; };
 		B67C71AA1DDDADC400F7C811 /* WDRSA.m in Sources */ = {isa = PBXBuildFile; fileRef = B67C71A91DDDADC400F7C811 /* WDRSA.m */; };
 		B67C71AD1DDDB0B500F7C811 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B67C71AC1DDDB0B500F7C811 /* Security.framework */; };
@@ -51,6 +52,8 @@
 		B65D513D1DC87F5300D4831D /* UIImageView+WDKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WDKit.m"; sourceTree = "<group>"; };
 		B65D513F1DC87FF100D4831D /* UIImage+WDKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WDKit.h"; sourceTree = "<group>"; };
 		B65D51401DC87FF100D4831D /* UIImage+WDKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WDKit.m"; sourceTree = "<group>"; };
+		B66C71F21DE6748C00771CF1 /* WDUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDUtils.h; sourceTree = "<group>"; };
+		B66C71F31DE6748C00771CF1 /* WDUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDUtils.m; sourceTree = "<group>"; };
 		B67C71A51DDDADB900F7C811 /* WDKeyChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDKeyChain.h; sourceTree = "<group>"; };
 		B67C71A61DDDADB900F7C811 /* WDKeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDKeyChain.m; sourceTree = "<group>"; };
 		B67C71A81DDDADC400F7C811 /* WDRSA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDRSA.h; sourceTree = "<group>"; };
@@ -165,6 +168,8 @@
 				B67C71A61DDDADB900F7C811 /* WDKeyChain.m */,
 				B67C71A81DDDADC400F7C811 /* WDRSA.h */,
 				B67C71A91DDDADC400F7C811 /* WDRSA.m */,
+				B66C71F21DE6748C00771CF1 /* WDUtils.h */,
+				B66C71F31DE6748C00771CF1 /* WDUtils.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 				B65D51161DC8749800D4831D /* AppDelegate.m in Sources */,
 				B65D51361DC8753200D4831D /* UIView+WDKit.m in Sources */,
 				B65D513B1DC87E9300D4831D /* UIButton+WDKit.m in Sources */,
+				B66C71F41DE6748C00771CF1 /* WDUtils.m in Sources */,
 				B67C71A71DDDADB900F7C811 /* WDKeyChain.m in Sources */,
 				B65D51351DC8753200D4831D /* NSString+WDKit.m in Sources */,
 				B65D51341DC8753200D4831D /* NSData+WDKit.m in Sources */,

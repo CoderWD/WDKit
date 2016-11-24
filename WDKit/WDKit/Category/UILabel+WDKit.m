@@ -8,6 +8,7 @@
 
 #import "UILabel+WDKit.h"
 #import "UIView+WDKit.h"
+#import "WDUtils.h"
 
 @implementation UILabel (WDKit)
 
@@ -18,12 +19,7 @@
  @return <#return value description#>
  */
 -(CGFloat)textHeight{
-    NSDictionary *attribute = @{NSFontAttributeName: self.font};
-    return [self.text boundingRectWithSize:CGSizeMake(self.width, CGFLOAT_MAX) options:
-            NSStringDrawingTruncatesLastVisibleLine |
-            NSStringDrawingUsesLineFragmentOrigin |
-            NSStringDrawingUsesFontLeading attributes:attribute
-                              context:nil].size.height;
+    return [WDUtils textHeight:self.text font:self.font width:self.width];
 }
 
 /**
@@ -32,12 +28,7 @@
  @return <#return value description#>
  */
 -(CGFloat)textWidth{
-    NSDictionary *attribute = @{NSFontAttributeName: self.font};
-    return [self.text boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, self.height) options:
-            NSStringDrawingTruncatesLastVisibleLine |
-            NSStringDrawingUsesLineFragmentOrigin |
-            NSStringDrawingUsesFontLeading attributes:attribute
-                                   context:nil].size.width;
+    return [WDUtils textWidth:self.text font:self.font height:self.height];
 }
 
 @end
