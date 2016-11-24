@@ -376,7 +376,7 @@
  *  @return <#return value description#>
  */
 -(NSString*)base64Encoding{
-    return [[NSString alloc] initWithData:[[NSData alloc] initWithBase64EncodedString:self options:NSDataBase64DecodingIgnoreUnknownCharacters] encoding:NSASCIIStringEncoding];
+    return [[self dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
 }
 
 /**
@@ -385,7 +385,7 @@
  *  @return <#return value description#>
  */
 -(NSString*)base64Decodeing{
-    return [[self dataUsingEncoding:NSASCIIStringEncoding] base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
+    return [[NSString alloc] initWithData:[[NSData alloc] initWithBase64EncodedString:self options:NSDataBase64DecodingIgnoreUnknownCharacters] encoding:NSUTF8StringEncoding];
 }
 
 @end
