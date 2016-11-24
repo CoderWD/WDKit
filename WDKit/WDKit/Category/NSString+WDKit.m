@@ -300,7 +300,8 @@
     size_t plainTextBufferSize;
     NSData *data = [sText dataUsingEncoding:NSUTF8StringEncoding];
     if (encryptOperation == kCCDecrypt){//解密
-       NSData *encryptData = [[NSData alloc] initWithBase64EncodedData:data options:NSDataBase64DecodingIgnoreUnknownCharacters];
+        NSData *encryptData = [[data base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed] dataUsingEncoding:NSUTF8StringEncoding];
+        //åNSData *encryptData = [[NSData alloc] initWithBase64EncodedData:data options:NSDataBase64DecodingIgnoreUnknownCharacters];
         plainTextBufferSize = [encryptData length];
         vplainText = [encryptData bytes];
     }else{//加密
@@ -342,7 +343,10 @@
                                        encoding:NSUTF8StringEncoding];
     }else{
         NSData *myData = [NSData dataWithBytes:(const void *)bufferPtr length:(NSUInteger)movedBytes];
-        result = [[myData base64EncodedDataWithOptions:NSDataBase64Encoding64CharacterLineLength] base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
+        
+        return [[NSString alloc] initWithData:[[NSData alloc] initWithBase64EncodedString:[[ NSString alloc] initWithData:myData encoding:NSUTF8StringEncoding] options:NSDataBase64DecodingIgnoreUnknownCharacters] encoding:NSASCIIStringEncoding];
+        
+        //result = [[myData base64EncodedDataWithOptions:NSDataBase64Encoding64CharacterLineLength] base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
     }
     
     return result;
