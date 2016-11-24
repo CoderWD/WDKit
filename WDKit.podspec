@@ -19,7 +19,7 @@ s.requires_arc = true
 
 #s.source_files = 'WDKit/WDKit/*'
 #s.source_files  = 'WDKit/WDKit/*.{h,m}'
-s.source_files  = 'WDKit/**/*.{h,m}'
+s.source_files  = 'WDKit/WDKit/**/*.{h,m}'
 
 #s.subspec 'Category' do |ss|
 #ss.source_files = 'WDKit/WDKit/Category/*.{h,m}'
