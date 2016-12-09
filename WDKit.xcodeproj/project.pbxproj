@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B625FE5A1DFAB302008DC8C4 /* NSObject+WDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B625FE591DFAB302008DC8C4 /* NSObject+WDKit.m */; };
 		B65D51131DC8749800D4831D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B65D51121DC8749800D4831D /* main.m */; };
 		B65D51161DC8749800D4831D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B65D51151DC8749800D4831D /* AppDelegate.m */; };
 		B65D51191DC8749800D4831D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B65D51181DC8749800D4831D /* ViewController.m */; };
@@ -28,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B625FE581DFAB302008DC8C4 /* NSObject+WDKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WDKit.h"; sourceTree = "<group>"; };
+		B625FE591DFAB302008DC8C4 /* NSObject+WDKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WDKit.m"; sourceTree = "<group>"; };
 		B65D510E1DC8749800D4831D /* WDKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WDKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B65D51121DC8749800D4831D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B65D51141DC8749800D4831D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -149,6 +152,8 @@
 				B65D51401DC87FF100D4831D /* UIImage+WDKit.m */,
 				B6EF22791DC8967A00AB037B /* UIFont+WDKit.h */,
 				B6EF227A1DC8967A00AB037B /* UIFont+WDKit.m */,
+				B625FE581DFAB302008DC8C4 /* NSObject+WDKit.h */,
+				B625FE591DFAB302008DC8C4 /* NSObject+WDKit.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -257,6 +262,7 @@
 			files = (
 				B6DE01C81DD4881000999642 /* UILabel+WDKit.m in Sources */,
 				B65D513E1DC87F5300D4831D /* UIImageView+WDKit.m in Sources */,
+				B625FE5A1DFAB302008DC8C4 /* NSObject+WDKit.m in Sources */,
 				B65D51191DC8749800D4831D /* ViewController.m in Sources */,
 				B65D51161DC8749800D4831D /* AppDelegate.m in Sources */,
 				B65D51361DC8753200D4831D /* UIView+WDKit.m in Sources */,
