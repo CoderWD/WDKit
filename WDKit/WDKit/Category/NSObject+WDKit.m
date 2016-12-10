@@ -14,21 +14,21 @@ static const void *extendObjectKey = @"extentObject";
 
 
 /**
- 扩展属性
+ runtime 扩展属性
 
  @return <#return value description#>
  */
 -(NSMutableDictionary *)extentObject{
-    id object = objc_getAssociatedObject(self, &extendObjectKey);
+    NSMutableDictionary *object = objc_getAssociatedObject(self, &extendObjectKey);
     if (object == nil) {
         object = [NSMutableDictionary dictionary];
-        objc_setAssociatedObject(self, &extendObjectKey, object, OBJC_ASSOCIATION_COPY_NONATOMIC);
+        objc_setAssociatedObject(self, &extendObjectKey, object, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     return object;
 }
 
 -(void)setExtentObject:(NSMutableDictionary *)extentObject{
-    objc_setAssociatedObject(self, &extendObjectKey, extentObject, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(self, &extendObjectKey, extentObject, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end

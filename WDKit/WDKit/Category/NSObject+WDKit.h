@@ -11,7 +11,7 @@
 @interface NSObject (WDKit)
 
 /**
- 扩展属性
+ runtime 扩展属性
  */
 @property (nonatomic,strong) NSMutableDictionary *extentObject;
 
