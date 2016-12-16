@@ -212,8 +212,17 @@
  
  @return <#return value description#>
  */
-- (UIImage *)convertToImage{
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake(self.width, self.height), NO, [UIScreen mainScreen].scale);
+- (UIImage *)convertToScreenScaleImage{
+    return [self convertToImageWithScale:[UIScreen mainScreen].scale];
+}
+
+/**
+ view截图
+ 
+ @return <#return value description#>
+ */
+- (UIImage *)convertToImageWithScale:(CGFloat)scale{
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(self.width, self.height), NO,scale);
     [self.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();

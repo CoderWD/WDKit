@@ -69,14 +69,19 @@
  */
 -(UIViewController *)viewController;
 
+/**
+ view截图
+ 
+ @return <#return value description#>
+ */
+- (UIImage *)convertToScreenScaleImage;
 
 /**
  view截图
-
+ 
  @return <#return value description#>
  */
-- (UIImage *)convertToImage;
-
+- (UIImage *)convertToImageWithScale:(CGFloat)scale;
 /**
  设置边框
 
