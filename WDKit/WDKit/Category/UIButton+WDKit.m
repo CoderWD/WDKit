@@ -172,7 +172,7 @@ static const void *WDHandlersKey = &WDHandlersKey;
 
  @param event <#event description#>
  */
--(void)remoeTargetWithEvent:(UIControlEvents)event{
+-(void)removeTargetWithEvent:(UIControlEvents)event{
     NSMutableArray *events = objc_getAssociatedObject(self, WDHandlersKey);
     NSMutableArray *copyArray = [events mutableCopy];
     [copyArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {

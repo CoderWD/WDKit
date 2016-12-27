@@ -48,6 +48,10 @@
 #else
     #define DLog(...)
 #endif
+//文件根目录归档
+#define WDRootArchive(object,name) [NSKeyedArchiver archiveRootObject:object toFile:[DOCUMENT_PATH stringByAppendingPathComponent:name]]
+//文件根目录解档
+#define WDRootUnArchive(name) [NSKeyedUnarchiver unarchiveObjectWithFile:[DOCUMENT_PATH stringByAppendingPathComponent:name]]
 
 //! Project version number for WDKit.
 FOUNDATION_EXPORT double WDKitVersionNumber;

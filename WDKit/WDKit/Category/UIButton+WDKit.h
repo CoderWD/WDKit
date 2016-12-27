@@ -101,6 +101,6 @@
  
  @param event <#event description#>
  */
--(void)remoeTargetWithEvent:(UIControlEvents)event;
+-(void)removeTargetWithEvent:(UIControlEvents)event;
     
 @end
