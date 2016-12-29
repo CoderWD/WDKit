@@ -71,6 +71,7 @@
     return [NSString stringWithFormat:@"#%x%x%x", (int)((CGColorGetComponents(color.CGColor))[0]*255.0),
             (int)((CGColorGetComponents(color.CGColor))[1]*255.0),
             (int)((CGColorGetComponents(color.CGColor))[2]*255.0)];
+
 }
 
 @end

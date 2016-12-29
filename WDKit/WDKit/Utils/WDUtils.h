@@ -31,4 +31,30 @@
  */
 +(CGFloat)textHeight:(NSString*)text font:(UIFont*)font width:(CGFloat)width;
 
+
+/**
+ 归档
+ 
+ @param object <#object description#>
+ @param name <#fileName description#>
+ @return <#return value description#>
+ */
++(BOOL)wd_archiveWithObject:(NSString*)object fileName:(NSString*)name;
+
+/**
+ 解档
+ 
+ @param name <#name description#>
+ @return <#return value description#>
+ */
++(id)wd_unArchiveWithFileName:(NSString*)name;
+
+/**
+ 删除归档文件
+ 
+ @param name <#name description#>
+ @return <#return value description#>
+ */
++(BOOL)wd_deleteArchiveWithFileName:(NSString*)name;
+
 @end

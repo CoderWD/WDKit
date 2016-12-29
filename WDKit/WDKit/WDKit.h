@@ -48,10 +48,14 @@
 #else
     #define DLog(...)
 #endif
+
 //文件根目录归档
-#define WDRootArchive(object,name) [NSKeyedArchiver archiveRootObject:object toFile:[DOCUMENT_PATH stringByAppendingPathComponent:name]]
+#define WDArchive(object,name) [WDUtils wd_archiveWithObject:object fileName:name]
 //文件根目录解档
-#define WDRootUnArchive(name) [NSKeyedUnarchiver unarchiveObjectWithFile:[DOCUMENT_PATH stringByAppendingPathComponent:name]]
+#define WDUnArchive(name) [WDUtils wd_unArchiveWithFileName:name]
+//删除根目录下的文件
+#define WDDeleteArchiveFile(name) [WDUtils wd_deleteArchiveWithFileName:name]
+
 
 //! Project version number for WDKit.
 FOUNDATION_EXPORT double WDKitVersionNumber;
