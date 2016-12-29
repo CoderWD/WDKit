@@ -72,7 +72,7 @@
  @param name <#fileName description#>
  @return <#return value description#>
  */
-+(BOOL)wd_archiveWithObject:(NSString*)object fileName:(NSString*)name{
++(BOOL)wd_archiveWithObject:(id)object fileName:(NSString*)name{
     NSString *filePath = [[WDUtils judgeCreateWDArchiveFolder] stringByAppendingPathComponent:name];
     return [NSKeyedArchiver archiveRootObject:object toFile:filePath];
 }
