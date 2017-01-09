@@ -386,8 +386,6 @@
  */
 -(NSString*)base64Decodeing{
     NSString *string =  [[NSString alloc] initWithData:[[NSData alloc] initWithBase64EncodedString:self options:NSDataBase64DecodingIgnoreUnknownCharacters] encoding:NSUTF8StringEncoding];
-    string = [string stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-    string = [string stringByReplacingOccurrencesOfString:@"\r" withString:@""];
     return string;
 }
 
