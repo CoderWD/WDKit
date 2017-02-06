@@ -376,7 +376,10 @@
  *  @return <#return value description#>
  */
 -(NSString*)base64Encoding{
-    return [[self dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    NSString *encodeString = [[self dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    //去掉oc自带算法的换行符
+    encodeString = [encodeString stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    return encodeString;
 }
 
 /**
