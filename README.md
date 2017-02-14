@@ -23,8 +23,21 @@ label.textHeight;
 string.base64Encoding
 //...... 更多如下说明
 ```
+* [Category【UIView】](#Category-UIView)
+* [Category【UILabel】](#Category-UILabel)  
+* [Category【UIButton】](#Category-UIButton)  
+* [Category【UIImage】](#Category-UIImage)  
+* [Category【NSString】](#Category-NSString)   
+* [Category【NSData】](#Category-NSData)  
+* [Category【NSObject】](#Category-NSObject)  
+* [Extension【UIColor】](#Extension-UIColor)  
+* [Utils篇【KeyChain】](#Utils-KeyChain)  
+* [Utils篇【RSA】](#Utils-RSA)  
+* [通用工具类](#Utils-common)  
+* [便捷宏定义](#Convenient-Default)  
+
 #####2、Category篇  
-######2.1 UIView 
+######<a id = "Category-UIView">2.1 UIView </a>
 ```
 /**
  *  通过响应者链找到view的viewController
@@ -113,7 +126,7 @@ string.base64Encoding
 @property (nonatomic) CGFloat centerY;
 
 ```  
-######2.2 UILabel  
+######<a id ="Category-UILabel">2.2 UILabel  </a>
 ```
 /**
  固定宽度计算文字高度
@@ -129,7 +142,7 @@ string.base64Encoding
  */
 -(CGFloat)textWidth;
 ``` 
-######2.3 UIButton
+######<a id="Category-UIButton">2.3 UIButton</a>
 ```
 /**
  设置Normal下的背景图片
@@ -224,7 +237,7 @@ string.base64Encoding
  */
 -(void)removeTargetWithEvent:(UIControlEvents)event;
 ```  
-######2.4 UIImage
+######<a id ="Category-UIImage">2.4 UIImage</a>
 ```
 /**
  *  传入图片放缓一个像素大小的UIImage图片
@@ -254,52 +267,7 @@ string.base64Encoding
 +(UIImage *)blurImage:(UIImage *)image withBlur:(CGFloat)blur;
 ``` 
 
-######2.5 NSData
-```
-/**
- *  aes265加密
- *
- *  @param key <#key description#>
- *
- *  @return <#return value description#>
- */
-- (NSData *)aes256_encrypt:(NSString *)key;
-
-/**
- *  aes265 解密
- *
- *  @param key <#key description#>
- *
- *  @return <#return value description#>
- */
-- (NSData *)aes256_decrypt:(NSString *)key;
-
-/**
- *  des加密
- *
- *  @param key <#key description#>
- *
- *  @return <#return value description#>
- */
--(NSData*)desEncryptWithKey:(NSString*)key;
-
-/**
- *  des解密
- *
- *  @param key <#key description#>
- *
- *  @return <#return value description#>
- */
--(NSData*)desDecrypttWithKey:(NSString*)key;
-
-/**
- *  转16进制字符串
- *
- *  @return <#return value description#>
- */
-- (NSString*)encryptHex;
-```
-######2.6 NSData
+######<a id="Category-NSString">2.6 NSString</a>
 ```
 /**
  *  判断身份证号码是否正确
@@ -343,12 +311,6 @@ string.base64Encoding
  *  @return <#return value description#>
  */
 -(NSString*)trim;
-/**
- *  url编码
- *
- *  @return <#return value description#>
- */
--(NSString*)encodeURL;
 /**
  *  SHA1加密
  *
@@ -421,7 +383,54 @@ string.base64Encoding
  */
 -(NSString*)base64Decodeing;
 ```
-######2.7 NSObject
+
+######<a id="Category-NSData">2.5 NSData</a>
+```
+/**
+ *  aes265加密
+ *
+ *  @param key <#key description#>
+ *
+ *  @return <#return value description#>
+ */
+- (NSData *)aes256_encrypt:(NSString *)key;
+
+/**
+ *  aes265 解密
+ *
+ *  @param key <#key description#>
+ *
+ *  @return <#return value description#>
+ */
+- (NSData *)aes256_decrypt:(NSString *)key;
+
+/**
+ *  des加密
+ *
+ *  @param key <#key description#>
+ *
+ *  @return <#return value description#>
+ */
+-(NSData*)desEncryptWithKey:(NSString*)key;
+
+/**
+ *  des解密
+ *
+ *  @param key <#key description#>
+ *
+ *  @return <#return value description#>
+ */
+-(NSData*)desDecrypttWithKey:(NSString*)key;
+
+/**
+ *  转16进制字符串
+ *
+ *  @return <#return value description#>
+ */
+- (NSString*)encryptHex;
+```
+
+######<a id="Category-NSObject">2.7 NSObject</a>
 ```
 /**
  runtime 扩展属性
@@ -429,7 +438,7 @@ string.base64Encoding
 @property (nonatomic,strong) NSMutableDictionary *extentObject;
 ```
 #####3、Extension偏  
-######3.1 UIColor
+######<a id="Extension-UIColor">3.1 UIColor</a>
 ```
 /**
  *  16进制颜色转RGB
@@ -460,7 +469,7 @@ string.base64Encoding
 + (NSString *) hexFromUIColor: (UIColor*) color;
 ```
 #####4、Utils篇
-######4.1 钥匙串（KeyChain）
+######<a id="Utils-KeyChain">4.1 钥匙串（KeyChain）</a>
 ```
 #import "WDKeyChain.h"
 
@@ -489,7 +498,7 @@ string.base64Encoding
  */
 + (void)deleteWithKey:(NSString *)key;
 ```
-######4.2 RSA加密解密
+######<a id="Utils-RSA">4.2 RSA加密解密</a>
 ```
 #import "WDRSA.h"
 
@@ -543,7 +552,7 @@ string.base64Encoding
 + (NSData *)decryptData:(NSData *)data privateKey:(NSString *)privKey;
 ```
 
-######4.3 通用工具类
+######<a id="Utils-common">4.3 通用工具类</a>
 ```
 #import "WDUtils.h"
 /**
@@ -592,7 +601,7 @@ string.base64Encoding
  */
 +(BOOL)wd_deleteArchiveWithFileName:(NSString*)name;
 ```
-#####4、便捷宏定义
+#####<a id="Convenient-Default">4、便捷宏定义</a>
 ```
 // 颜色RBG
 #define RGB(r, g, b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
