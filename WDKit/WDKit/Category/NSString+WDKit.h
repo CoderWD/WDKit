@@ -131,6 +131,6 @@
  *
  *  @return NSMutableDictionary parameters
  */
-- (NSMutableDictionary *)getURLParameter;
+- (NSMutableDictionary *)getURLParameters;
 
 @end
