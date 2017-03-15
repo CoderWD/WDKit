@@ -53,12 +53,7 @@
  *  @return <#return value description#>
  */
 -(NSString*)trim;
-/**
- *  url编码
- *
- *  @return <#return value description#>
- */
--(NSString*)encodeURL;
+
 /**
  *  SHA1加密
  *
@@ -130,5 +125,12 @@
  *  @return <#return value description#>
  */
 -(NSString*)base64Decodeing;
+
+/**
+ *  截取URL中的参数
+ *
+ *  @return NSMutableDictionary parameters
+ */
+- (NSMutableDictionary *)getURLParameter;
 
 @end
