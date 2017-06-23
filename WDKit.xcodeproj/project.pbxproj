@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B600054C1EFCE9FC00EBAD43 /* UIViewController+WDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B600054B1EFCE9FC00EBAD43 /* UIViewController+WDKit.m */; };
 		B625FE5A1DFAB302008DC8C4 /* NSObject+WDKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B625FE591DFAB302008DC8C4 /* NSObject+WDKit.m */; };
 		B65D51131DC8749800D4831D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B65D51121DC8749800D4831D /* main.m */; };
 		B65D51161DC8749800D4831D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B65D51151DC8749800D4831D /* AppDelegate.m */; };
@@ -29,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B600054A1EFCE9FC00EBAD43 /* UIViewController+WDKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+WDKit.h"; sourceTree = "<group>"; };
+		B600054B1EFCE9FC00EBAD43 /* UIViewController+WDKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+WDKit.m"; sourceTree = "<group>"; };
 		B625FE581DFAB302008DC8C4 /* NSObject+WDKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WDKit.h"; sourceTree = "<group>"; };
 		B625FE591DFAB302008DC8C4 /* NSObject+WDKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+WDKit.m"; sourceTree = "<group>"; };
 		B65D510E1DC8749800D4831D /* WDKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WDKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +157,8 @@
 				B6EF227A1DC8967A00AB037B /* UIFont+WDKit.m */,
 				B625FE581DFAB302008DC8C4 /* NSObject+WDKit.h */,
 				B625FE591DFAB302008DC8C4 /* NSObject+WDKit.m */,
+				B600054A1EFCE9FC00EBAD43 /* UIViewController+WDKit.h */,
+				B600054B1EFCE9FC00EBAD43 /* UIViewController+WDKit.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 				B65D51131DC8749800D4831D /* main.m in Sources */,
 				B6EF227B1DC8967A00AB037B /* UIFont+WDKit.m in Sources */,
 				B67C71AA1DDDADC400F7C811 /* WDRSA.m in Sources */,
+				B600054C1EFCE9FC00EBAD43 /* UIViewController+WDKit.m in Sources */,
 				B65D51411DC87FF100D4831D /* UIImage+WDKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
