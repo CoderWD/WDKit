@@ -26,7 +26,7 @@
     }else if(position == NavPositionRgit){
         [navButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
     }
-    [navButton setNormalBackgroundImage:WDNameImage(iconName)];
+    [navButton setImage:WDNameImage(iconName) forState:UIControlStateNormal];
     [navButton setNormalTitle:title];
     UIBarButtonItem *navBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:navButton];
     
@@ -40,7 +40,7 @@
     if (position == NavPositionLeft) {
         [self.navigationItem setLeftBarButtonItems:items];
     }else if(position == NavPositionRgit){
-        [self.navigationItem setLeftBarButtonItems:items];
+        [self.navigationItem setRightBarButtonItems:items];
     }
 }
 
