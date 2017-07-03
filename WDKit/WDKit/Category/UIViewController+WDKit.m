@@ -64,7 +64,7 @@
  @return <#return value description#>
  */
 -(UIButton*)rightNavButton{
-    if (self.navigationItem.leftBarButtonItem && [self.navigationItem.rightBarButtonItem.customView isKindOfClass:[UIButton class]]) {
+    if (self.navigationItem.rightBarButtonItem && [self.navigationItem.rightBarButtonItem.customView isKindOfClass:[UIButton class]]) {
         return self.navigationItem.rightBarButtonItem.customView;
     }else if([self.navigationItem.rightBarButtonItems count] == 1 && [self.navigationItem.rightBarButtonItems.firstObject isKindOfClass:[UIButton class]]){
         return (UIButton*)self.navigationItem.rightBarButtonItems.firstObject;
