@@ -23,13 +23,15 @@
 #import "WDKeyChain.h"
 
 //3.5寸屏
-#define is3_5inch ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
+#define is3_5inch CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(320, 480))
+//3.5retina屏
+#define is3_5inch_retina CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(640, 960))
 //3.5寸retina屏
-#define is4inch_retina ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+#define is4inch_retina CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(640, 1136))size) : NO)
 //4.7寸retina屏
-#define is4_7inch_retina ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
+#define is4_7inch_retina CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(750, 1334))
 //5.寸retina屏
-#define is5_5inch_retina ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size) : NO)
+#define is5_5inch_retina CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(1242, 2208))
 
 //app框架高度
 #define APP_FRAME_HEIGHT [[UIScreen mainScreen] applicationFrame].size.height
