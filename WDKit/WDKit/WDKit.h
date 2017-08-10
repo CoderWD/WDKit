@@ -22,16 +22,17 @@
 #import "WDRSA.h"
 #import "WDKeyChain.h"
 
-//3.5寸屏
-#define is3_5inch CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(320, 480))
-//3.5retina屏
-#define is3_5inch_retina CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(640, 960))
-//3.5寸retina屏
-#define is4inch_retina CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(640, 1136))
-//4.7寸retina屏
-#define is4_7inch_retina CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(750, 1334))
-//5.寸retina屏
-#define is5_5inch_retina CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(1242, 2208))
+//判断与相应的屏幕比例是否一致
+#define SCALE_TO_SCREEN(w,h) [[NSString stringWithFormat:@"%0.5f",UIScreen.mainScreen.bounds.size.width/UIScreen.mainScreen.bounds.size.height] isEqualToString:[NSString stringWithFormat:@"%0.5f",w/h]]
+//3.5寸屏比例
+#define SCALE_3_5INCH SCALE_TO_SCREEN(640.f,960.f)
+//4.7寸屏比例
+#define SCALE_4INCH_SCREEN SCALE_TO_SCREEN(640.f,1136.f)
+//5寸屏比例
+#define SCALE_4_7INCH_SCREEN SCALE_TO_SCREEN(750.f,1334.f)
+//5.5寸屏比例
+#define SCALE_5_5INCH_SCREEN SCALE_TO_SCREEN(1242.f,2208.f)
+
 
 //app框架高度
 #define APP_FRAME_HEIGHT [[UIScreen mainScreen] applicationFrame].size.height
