@@ -27,7 +27,7 @@
 //3.5retina屏
 #define is3_5inch_retina CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(640, 960))
 //3.5寸retina屏
-#define is4inch_retina CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(640, 1136))size) : NO)
+#define is4inch_retina CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(640, 1136))
 //4.7寸retina屏
 #define is4_7inch_retina CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(750, 1334))
 //5.寸retina屏
