@@ -42,7 +42,7 @@
 #define SCALE_IPHONE_XS_MAX_SCREEN SCALE_TO_SCREEN(1242.f,2688.f)
 
 //是否为刘海屏
-#define IS_FRINGE_SCREEN ([[UIApplication sharedApplication] statusBarFrame].size.height == 40)
+#define IS_FRINGE_SCREEN ([[UIApplication sharedApplication] statusBarFrame].size.height == 44)
 
 //app框架高度
 #define APP_FRAME_HEIGHT [[UIScreen mainScreen] applicationFrame].size.height
